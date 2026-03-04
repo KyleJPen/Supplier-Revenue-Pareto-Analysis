@@ -43,17 +43,17 @@ Efficient inventory and supplier management is critical for revenue and operatio
 ```id="pwr8dx"
 project-name/
 ├── README.md
-├── dashboard/
-│   ├── dax_measures/
-│   └── sql_scripts/
-├── dashboard_screenshot.png
-├── initial_tables/       # screenshots from initial exploration
-│   ├── table_1.png
-│   └── Screenshots
-└── executive_summary.docx
+├── dashboard/                 
+│   ├── dax_measures/          # DAX calculations used in the dashboard
+│   └── sql_scripts/           # SQL queries used to prepare and analyze data
+├── data/
+│   ├── original_data_tables/   # original dataset tables used in analysis
+│   └── tables_screenshots/     # screenshots from initial exploration
+├── dashboard_screenshot.png    # screenshot of final dashboard
+└── executive_summary.docx      # summary of findings and recommendations
 ```
 
-*The dashboard folder contains both DAX measures and SQL scripts. Visual outputs are captured in the dashboard screenshot and summary tables created during initial exploration.*
+*The dashboard folder contains all DAX measures and SQL scripts used to generate insights. The data folder captures both the original data tables and screenshots from initial exploration, documenting the workflow prior to building the dashboard.*
 
 ---
 
