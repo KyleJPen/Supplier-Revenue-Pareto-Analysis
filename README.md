@@ -58,9 +58,3 @@ project-name/
 * Automate monitoring of top SKUs using calculated reorder points.
 * Build an interactive dashboard in Tableau or Power BI for real-time inventory insights.
 * Explore predictive demand modeling to improve reorder accuracy.
-
----
-
-## Visualization
-
-![SKU Revenue Chart](./visuals/sku_revenue_chart.png)
