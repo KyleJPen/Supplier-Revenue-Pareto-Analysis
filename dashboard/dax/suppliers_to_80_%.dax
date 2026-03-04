@@ -1,0 +1,30 @@
+Suppliers to 80% = 
+VAR Target = 0.8
+VAR SupplierRevenueTable =
+    SUMMARIZE(
+        orders,
+        orders[supplier_id],
+        "Revenue", [Total Revenue]
+    )
+VAR SortedTable =
+    ADDCOLUMNS(
+        SupplierRevenueTable,
+        "Rank", RANKX(SupplierRevenueTable, [Revenue], , DESC, SKIP)
+    )
+VAR CumulativeTable =
+    ADDCOLUMNS(
+        SortedTable,
+        "Cumulative",
+        VAR CurrentRank = [Rank]
+        RETURN
+            DIVIDE(
+                SUMX(FILTER(SortedTable, [Rank] <= CurrentRank), [Revenue]),
+                SUMX(SupplierRevenueTable, [Revenue]),
+                0
+            )
+    )
+RETURN
+MINX(
+    FILTER(CumulativeTable, [Cumulative] >= Target),
+    [Rank]
+)
