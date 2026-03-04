@@ -51,7 +51,7 @@ Inventory table with SKU-level stock data
 
 PostgreSQL database environment
 
-Total Revenue (validated via SQL): $59,941,217.93
+Total Revenue (validated via SQL): $29,970,608.95
 
 - SQL Components
   
