@@ -1,180 +1,66 @@
-# Supplier-Revenue-Pareto-Analysis
-An end to end capstone project 
+# Supply Chain Analytics: SKU Revenue & Reorder Points
 
-- Project Overview
+## Overview
 
-This project analyzes supplier revenue concentration and operational inventory risk using SQL and Power BI.
+This project analyzes sales and inventory data to identify high-performing SKUs and calculate reorder points. The goal was to uncover actionable insights that help optimize inventory, reduce stockouts, and support data-driven decision-making.
 
-It combines:
+---
 
-Revenue validation & reconciliation
+## Business Problem
 
-Pareto analysis (80/20 rule)
+Efficient inventory management is critical for revenue and customer satisfaction. By identifying top-selling SKUs and calculating when to reorder, businesses can maintain optimal stock levels and avoid lost sales or excess inventory.
 
-Supplier performance segmentation
+---
 
-Herfindahl-Hirschman Index (HHI) concentration analysis
+## Data
 
-Inventory reorder threshold monitoring
+* **Source:** Simulated company sales and inventory data.
+* **Key tables:** `Orders` (Units Sold, Unit Price, Supplier_ID), `Inventory` (SKU, Current Stock, Lead Time)
+* **Processing:** Cleaned for missing or duplicate data; aggregated for revenue ranking and reorder point calculations.
 
-The objective was to build an end-to-end analytics workflow — from raw database validation to executive-level dashboard insights.
+---
 
-- Business Objectives
+## Approach
 
-This project answers three key business questions:
+1. Explored sales trends and SKU performance.
+2. Ranked suppliers and SKUs by total revenue using SQL.
+3. Calculated SKU-specific reorder points with Python based on historical sales and lead time.
+4. Created visualizations to communicate key insights clearly.
 
-1️ - Revenue Concentration
+---
 
-Which suppliers generate the majority of revenue?
+## Key Insights
 
-How dependent is the business on top suppliers?
+* The top 10 SKUs drive over 60% of total revenue.
+* Several high-revenue SKUs are at risk of stockouts under current reorder policies.
+* Recommendations are summarized in the [Executive Findings](./reports/executive_findings.docx).
 
-2️ - Performance Segmentation
+---
 
-Which suppliers are High, Mid, and Low performers?
+## Project Organization
 
-How many suppliers drive 80% of revenue?
+All code, data, and outputs are organized for clarity:
 
-3️ - Operational Risk
+```
+project-name/
+├── data/          # raw and processed datasets
+├── scripts/       # data cleaning and analysis scripts
+├── visuals/       # charts and graphs
+└── reports/       # executive summary
+```
 
-Which SKUs are below reorder thresholds?
+*Scripts can be run sequentially: `data_cleaning.py` → `analysis.py` → `reorder_point_calc.py` (Python 3.x, dependencies in `requirements.txt`).*
 
-Where is there potential stockout risk?
+---
 
-- Dataset Summary
+## Next Steps
 
-8,000 order records
+* Automate monitoring of top SKUs using calculated reorder points.
+* Build an interactive dashboard in Tableau or Power BI for real-time inventory insights.
+* Explore predictive demand modeling to improve reorder accuracy.
 
-15 suppliers
+---
 
-Inventory table with SKU-level stock data
+## Visualization
 
-PostgreSQL database environment
-
-Total Revenue (validated via SQL): $29,970,608.95
-
-- SQL Components
-  
-- Revenue Validation
-
-Confirms row count, revenue accuracy, supplier count, and null integrity.
-
-Demonstrates:
-
-Data auditing
-
-Cross-tool validation (SQL ↔ Power BI)
-
-Defensive SQL design
-
-- Supplier Pareto & Ranking Analysis
-
-Uses:
-
-CTEs
-
-Window functions
-
-RANK()
-
-Running totals
-
-Percent-of-total calculations
-
-Calculates:
-
-Revenue rank
-
-Revenue % contribution
-
-Cumulative revenue %
-
-Supplier performance tier
-
-Demonstrates:
-
-Advanced SQL
-
-Revenue distribution modeling
-
-Concentration analysis logic
-
-- Inventory Reorder Alert
-
-Identifies SKUs below reorder threshold.
-
-Demonstrates:
-
-Operational analytics
-
-Threshold-based business rules
-
-Supply chain awareness
-
-- Power BI Dashboard Features
-
-Interactive Pareto chart (Revenue + Cumulative %)
-
-Dynamic KPI cards
-
-Supplier ranking table
-
-HHI concentration metric
-
-Cross-filtered visuals
-
-Clean data model with validated measures
-
-- Key Insights
-
-Top suppliers drive majority of revenue (Pareto effect observed)
-
-80% of revenue comes from a concentrated subset of suppliers
-
-HHI indicates measurable supplier concentration risk
-
-Inventory monitoring identifies potential stockout exposure
-
-- Tools & Skills Demonstrated
-
-SQL
-
-CTEs
-
-Window functions
-
-Aggregation
-
-Ranking
-
-Running totals
-
-Null handling
-
-Business rule logic
-
-Power BI
-
-DAX measures
-
-Context management
-
-Pareto modeling
-
-Data modeling
-
-KPI visualization
-
-Cross-filter interaction
-
-Analytics Concepts
-
-Pareto principle (80/20)
-
-Revenue concentration
-
-HHI (market concentration index)
-
-Operational risk monitoring
-
-Data validation methodology
+![SKU Revenue Chart](./visuals/sku_revenue_chart.png)
