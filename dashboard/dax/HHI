@@ -1,0 +1,11 @@
+HHI = 
+SUMX(
+    VALUES(orders[supplier_id]),
+    VAR Share =
+        DIVIDE(
+            [Total Revenue],
+            CALCULATE([Total Revenue], ALL(orders[supplier_id])),
+            0
+        )
+    RETURN Share * Share
+) * 10000
