@@ -1,0 +1,7 @@
+Supplier Tier = 
+SWITCH(
+    TRUE(),
+    [Revenue Share %] >= 0.20, "High Performer",
+    [Revenue Share %] >= 0.10, "Mid Tier",
+    "Low Performer"
+)
