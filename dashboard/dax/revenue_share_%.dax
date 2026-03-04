@@ -1,0 +1,6 @@
+Revenue Share % = 
+DIVIDE(
+    [Total Revenue],
+    CALCULATE([Total Revenue], ALL(orders[supplier_id])),
+    0
+)
