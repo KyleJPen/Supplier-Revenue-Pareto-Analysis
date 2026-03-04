@@ -35,18 +35,21 @@ Efficient inventory management is critical for revenue and customer satisfaction
 * Several high-revenue SKUs are at risk of stockouts under current reorder policies.
 * Recommendations are summarized in the [Executive Findings](./reports/executive_findings.docx).
 
+The dashboard folder contains both the DAX measures and SQL scripts used to generate the insights. Visual outputs are captured in the dashboard screenshot and tables created during the initial exploration.
 ---
 
 ## Project Organization
 
-All code, data, and outputs are organized for clarity:
+All key files are organized clearly for easy review:
 
 ```
 project-name/
-├── data/          # raw and processed datasets
-├── scripts/       # data cleaning and analysis scripts
-├── visuals/       # charts and graphs
-└── reports/       # executive summary
+├── README.md
+├── dashboard/                 
+│   ├── dax_measures/          # DAX calculations used in the dashboard
+│   └── sql_scripts/           # SQL queries used for data preparation and analysis
+├── dashboard_screenshot.png   # screenshot of final dashboard
+└── executive_summary.docx     # summary of findings and recommendations
 ```
 
 *Scripts can be run sequentially: `data_cleaning.py` → `analysis.py` → `reorder_point_calc.py` (Python 3.x, dependencies in `requirements.txt`).*
