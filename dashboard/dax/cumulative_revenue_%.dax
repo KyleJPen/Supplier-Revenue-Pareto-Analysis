@@ -1,0 +1,11 @@
+CumulativeRevenue% = 
+VAR CurrentRank = SupplierRevenueTable[RevenueRank]
+VAR TotalRevenueAll = SUMX(SupplierRevenueTable, SupplierRevenueTable[Revenue])
+RETURN
+DIVIDE(
+    SUMX(
+        FILTER(SupplierRevenueTable, SupplierRevenueTable[RevenueRank] <= CurrentRank),
+        SupplierRevenueTable[Revenue]
+    ),
+    TotalRevenueAll
+)
