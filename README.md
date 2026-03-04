@@ -54,7 +54,8 @@ PostgreSQL database environment
 Total Revenue (validated via SQL): $59,941,217.93
 
 - SQL Components
- 1. Revenue Validation
+  
+- Revenue Validation
 
 Confirms row count, revenue accuracy, supplier count, and null integrity.
 
@@ -66,7 +67,7 @@ Cross-tool validation (SQL ↔ Power BI)
 
 Defensive SQL design
 
-- 2. Supplier Pareto & Ranking Analysis
+- Supplier Pareto & Ranking Analysis
 
 Uses:
 
@@ -98,7 +99,7 @@ Revenue distribution modeling
 
 Concentration analysis logic
 
-- 3. Inventory Reorder Alert
+- Inventory Reorder Alert
 
 Identifies SKUs below reorder threshold.
 
